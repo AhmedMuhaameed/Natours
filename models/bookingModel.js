@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = new mongoose.Schema({
+  id: String,
   tour: {
     type: mongoose.Schema.ObjectId,
     ref: 'Tour',

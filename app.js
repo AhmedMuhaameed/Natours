@@ -10,10 +10,10 @@ const cors = require('cors');
 const cookieParser=require('cookie-parser');
 const AppError = require('./utils/appError.js');
 const globalErrorHandler = require('./controllers/errorController.js');
-const tourRouter = require('./routes/tourRoutes.js');
-const userRouter = require('./routes/userRoutes.js');
-const reviewRouter = require('./routes/reviewRoutes.js');
-const bookingRouter = require('./routes/bookingRoutes.js');
+const tourRouter = require('./routes/tourRoutes');
+const userRouter = require('./routes/userRoutes');
+const reviewRouter = require('./routes/reviewRoutes');
+const bookingRouter = require('./routes/bookingRoutes');
 const viewRouter = require('./routes/viewRoutes.js');
 const app = express();
 

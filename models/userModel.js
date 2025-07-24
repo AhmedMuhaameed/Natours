@@ -4,6 +4,7 @@ const validator = require('validator');
 const bcrypt = require('bcryptjs');
 
 const userSchema = new mongoose.Schema({
+  id: String,
   name: {
     type: String,
     required: [true, 'Please tell us your name!'],
@@ -95,8 +96,6 @@ userSchema.methods.createPasswordResetToken = function () {
   const restToken = crypto.randomBytes(32).toString('hex');
   this.passwordResetToken = crypto.createHash('sha256').update(restToken).digest('hex');
   this.passwordResetExpires = Date.now() + 10 * 60 * 1000;
-
-  console.log({ restToken }, this.passwordResetToken);
 
   return restToken;
 };
