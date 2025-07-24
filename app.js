@@ -19,10 +19,8 @@ const app = express();
 
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
-app.use(cors({
-  credentials: true,
-  origin: "http://127.0.0.1:3000" || "http://127.0.0.1:3000"
-}));
+app.use(cors());
+app.options('*', cors());
 
 //serving Static files
 app.use(express.static(path.join(__dirname, 'public')));
